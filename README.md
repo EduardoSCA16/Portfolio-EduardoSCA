@@ -2,6 +2,10 @@
 
 Currículo online de Eduardo Santana Cruz Almeida, estudante de Engenharia de Software e desenvolvedor Back-end Java.
 
+## Site publicado
+
+[Acessar o portfólio no GitHub Pages](https://eduardosca16.github.io/Portfolio-EduardoSCA/)
+
 ## Executar localmente
 
 O projeto usa apenas HTML, CSS e JavaScript. Abra o arquivo `index.html` no navegador ou sirva a pasta com um servidor HTTP local.
