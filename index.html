@@ -20,10 +20,10 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307111f'/%3E%3Cpath d='M17 16h30v8H26v5h17v8H26v5h21v8H17z' fill='%231e90ff'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/script.js" defer></script>
+    <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
+    <div class="cursor-glow" data-pointer-glow aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
 
     <header class="site-header" data-header>
@@ -51,7 +51,7 @@
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow"><span></span> Olá, eu sou</p>
-          <h1 id="hero-title">Eduardo Santana<br /><strong>Cruz Almeida.</strong></h1>
+          <h1 id="hero-title">Eduardo Santana <br /><strong>Cruz Almeida.</strong></h1>
           <p class="hero-role">Desenvolvedor Back-end <span>Java</span></p>
           <p class="hero-intro">
             Construo minha carreira transformando lógica, dados e boas práticas em soluções de software confiáveis.
@@ -72,7 +72,7 @@
           </div>
           <div class="availability-card">
             <span class="availability-dot"></span>
-            <p><small>Foco atual</small>Java &amp; Spring Boot</p>
+            <p><small>Stack principal</small>Java &amp; Spring Boot</p>
           </div>
         </div>
 
@@ -91,36 +91,35 @@
           <div class="about-layout">
             <div class="about-copy reveal">
               <p class="about-lead">
-                Sou estudante de Engenharia de Software na <strong>UNIGOIÁS</strong>, atualmente no 6º semestre,
-                com formatura prevista para o final de 2027.
+                Sou estudante de Engenharia de Software na <strong>UNIGOIÁS</strong> e desenvolvedor Back-end em
+                formação, com foco no ecossistema <strong>Java e Spring Boot</strong>.
               </p>
               <p>
-                Desde maio de 2024, atuo como Auxiliar de Faturamento no Hospital Amparo. Além das rotinas da
-                função, tornei-me uma referência técnica informal para os colegas, auxiliando na solução de
-                dificuldades com sistemas e na comunicação com a equipe de TI.
+                Minha trajetória em tecnologia combina desenvolvimento, análise de dados e suporte. Gosto de entender
+                problemas, organizar informações e construir soluções que tornem processos mais claros e eficientes.
               </p>
               <p>
-                Estou direcionando minha carreira para o desenvolvimento Back-end, aprofundando meus conhecimentos
-                em <strong>Java e Spring Boot</strong> para criar APIs e aplicações bem estruturadas.
+                Busco evoluir por meio de projetos práticos, aplicando fundamentos de programação, APIs, bancos de
+                dados e boas práticas de engenharia de software.
               </p>
             </div>
 
             <div class="about-facts reveal" aria-label="Resumo acadêmico e profissional">
-              <article class="fact-card">
-                <span class="fact-number">6º</span>
-                <p>semestre de Engenharia de Software</p>
-              </article>
               <article class="fact-card fact-card-accent">
-                <span class="fact-number">2027</span>
-                <p>previsão de conclusão da graduação</p>
-              </article>
-              <article class="fact-card">
-                <span class="fact-number">05.24</span>
-                <p>início da experiência no Hospital Amparo</p>
-              </article>
-              <article class="fact-card">
                 <span class="fact-icon" aria-hidden="true">{ }</span>
-                <p>foco em desenvolvimento Back-end</p>
+                <p>desenvolvimento Back-end com Java</p>
+              </article>
+              <article class="fact-card">
+                <span class="fact-icon" aria-hidden="true">SQL</span>
+                <p>dados, consultas e organização da informação</p>
+              </article>
+              <article class="fact-card">
+                <span class="fact-icon" aria-hidden="true">BI</span>
+                <p>análise de dados e dashboards</p>
+              </article>
+              <article class="fact-card">
+                <span class="fact-icon" aria-hidden="true">TI</span>
+                <p>suporte e resolução de problemas</p>
               </article>
             </div>
           </div>
@@ -137,9 +136,7 @@
           <div class="timeline reveal">
             <article class="experience-card">
               <div class="experience-date">
-                <span>MAI 2024</span>
-                <i></i>
-                <span>ATUAL</span>
+                <span>DESDE MAI. 2024</span>
               </div>
               <div class="experience-content">
                 <div class="experience-title-row">
@@ -147,7 +144,7 @@
                     <p class="experience-company">Hospital Amparo</p>
                     <h3>Auxiliar de Faturamento</h3>
                   </div>
-                  <span class="experience-type">Experiência atual</span>
+                  <span class="experience-type">Tecnologia na operação</span>
                 </div>
                 <p>
                   Atuação nas rotinas de faturamento hospitalar com os sistemas ProMedico e Gesthor. No dia a dia,
@@ -186,7 +183,7 @@
           </div>
 
           <div class="projects-grid">
-            <article class="project-card project-featured reveal">
+            <article class="project-card project-featured reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">PROJETO EM DESTAQUE</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true">
@@ -216,7 +213,7 @@
               <span class="featured-watermark" aria-hidden="true">SPRING</span>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">01</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>
@@ -229,7 +226,7 @@
               </a>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">02</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>
@@ -242,7 +239,7 @@
               </a>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">03</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>
@@ -255,7 +252,7 @@
               </a>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">04</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>
@@ -268,7 +265,7 @@
               </a>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">05</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>
@@ -281,7 +278,7 @@
               </a>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">06</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>
@@ -294,7 +291,7 @@
               </a>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card reveal" data-spotlight>
               <div class="project-topline">
                 <span class="project-number">07</span>
                 <svg class="project-folder" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H9l2 2h7.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" /></svg>

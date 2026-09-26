@@ -7,6 +7,11 @@ on:
     paths:
       - "index.html"
       - "assets/**"
+      - "src/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "tsconfig.json"
+      - "vite.config.ts"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -30,20 +35,30 @@ jobs:
       - name: Baixar o projeto
         uses: actions/checkout@v6
 
+      - name: Configurar o pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Configurar o Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Instalar dependências
+        run: pnpm install --frozen-lockfile
+
+      - name: Gerar a versão de produção
+        run: pnpm run build
+
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v5
-
-      - name: Preparar os arquivos do site
-        run: |
-          mkdir -p _site
-          cp index.html _site/index.html
-          cp -R assets _site/assets
-          touch _site/.nojekyll
 
       - name: Enviar os arquivos para publicação
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./_site
+          path: ./dist
 
       - name: Publicar no GitHub Pages
         id: deployment
