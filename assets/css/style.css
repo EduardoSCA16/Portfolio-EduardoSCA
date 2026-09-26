@@ -1249,6 +1249,10 @@ a {
     gap: 5rem;
   }
 
+  .about-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .fact-card {
     min-height: 12rem;
     padding: 1.5rem;
