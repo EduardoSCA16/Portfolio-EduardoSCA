@@ -26,5 +26,5 @@ pnpm build
 - `index.html`: conteúdo e estrutura do portfólio;
 - `assets/css/style.css`: identidade visual e responsividade;
 - `src/main.ts`: navegação e animações;
-- `assets/profile.jpg`: imagem de perfil substituível.
+- `assets/profile.png`: imagem de perfil substituível.
 
